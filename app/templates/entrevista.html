@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario de Entrevista - TIKA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static\css\StyleLogin.css">
+<a href="index.html" class="btn-volver" style="display:inline-block;margin-bottom:40px;padding:30px 20px;background:#edd548;color:#000000;text-decoration:none;border-radius:10px;">Volver al inicio</a>
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif;
+      background-color: #fcffd1; 
+      margin: 0;
+      padding: 0;
+      background-image: url(img/pared.png); 
+      background-size: cover;      
+      background-position: center; 
+      background-repeat: repeat;       
+      
+    }
+    
+    .form-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background-color: #ffecb4;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        border: 4px solid #00000014;
+      
+}
+
+    h1 {
+      text-align: center;
+      color: #000000; 
+      margin-bottom: 20px;
+    }
+    h2 {
+        text-align: center;
+        color: #74481f; 
+        margin-bottom: 20px;
+      }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: 'Lexend', sans-serif;
+      background-color: #d4d5d2;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-family: 'Lexend', sans-serif;
+      background-color: #151515;
+      color: #efe3e3;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ea3333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>TIKA Espacio Terapéutico </h1>
+    <h2>Entrevista Integral de admisión</h2>
+    <form action="#" method="post">
+
+        <h2>Datos del Niño</h2>
+        <label for="NombreNiño">Nombre del Niño</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="apellido">Apellido del niño</label>
+        <input type="text" id="apellido" name="apellido" required>
+        <label for="dni">DNI del niño</label>
+        <input type="text" id="dni" name="dni" required>
+        <label for="fecha_nacimiento">Fecha de nacimiento</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"
+        required>
+
+        <h2>Datos del Tutor</h2>
+
+        <label for="Email Madre/Padre o Tutor">Email Madre/Padre o Tutor</label>
+        <input type="email" id="email" name="email" required>
+        <label for="telefono">Teléfono de contacto</label>
+        <input type="tel" id="telefono" name="telefono" required>
+        <label for="localidad">Localidad</label>
+        <input type="text" id="localidad" name="localidad" required>
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+
+        
+        <h2>Periodo Perinatal y Postnatal/Postparto</h2>
+        <label for="embarazo">¿Tuvo algún inconveniente en el embarazo?</label>
+        <textarea id="embarazo" name="embarazo" rows="3" required></textarea>
+
+      <label for="parto">¿Parto normal o cesárea?</label>
+      <select id="parto" name="parto" required>
+        <option value="">Seleccione una opción</option>
+        <option value="normal">Normal</option>
+        <option value="cesarea">Cesárea</option>
+      </select>
+
+      <label for="lactancia">¿Como fue la lactancia?</label>
+      <select id="lactancia" name="lactancia" required>
+        <option value="">Seleccione una opción</option>
+        <option value="Buena">Buena</option>
+        <option value="Mala">Mala </option>
+        <option value="Con complicaciones">Con complicaciones</option>
+      </select>
+
+      <label for="destete">¿Como fue el destete?</label>
+      <select id="destete" name="destete" required>
+        <option value="">Seleccione una opción</option>
+        <option value="Buena">Buena</option>
+        <option value="Mala">Mala </option>
+        <option value="Con complicaciones">Con complicaciones</option>
+      </select>
+   
+      <label for="dormir">En cuanto al sueño ¿Duerme bien?</label>
+      <select id="dormir" name="dormir" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="alimentacion">¿Se alimenta bien?</label>
+      <select id="alimentacion" name="alimentacion" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="habla">¿Habla?</label>
+      <select id="habla" name="habla" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+      <label for="fraces">¿A que edad dijo sus primeras palabras?</label>
+      <input type="number" id="fraces" name="fraces" min="0" max="10" required>
+
+      <label for="caminar">¿A que edad camino?</label>
+      <input type="number" id="caminar" name="caminar" min="0" max="5" required>
+
+      <label for="sentar">¿A que edad se sento?</label>
+      <input type="number" id="sentar" name="sentar" min="0" max="5" required>
+
+      <label for="esfinteres">¿Controla esfínteres?</label>
+      <select id="esfinteres" name="esfinteres" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="pañales">¿A que edad dejo los pañales?</label>
+      <input type="number" id="pañales" name="pañales" min="0" max="5" required>
+
+      <label for="alimentacion">¿Tiene selectividad alimentaria?</label>
+      <select id="alimentacion" name="alimentacion" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <h2>Desempeño y contexto Escolar</h2>
+
+      <label for="lee">¿Lee?</label>
+      <select id="lee" lee="lee" required>
+        <option value="">Seleccione una opcion</option>
+        <option value="si">"Si"</option>
+        <option value="no">"No"</option>
+        <option value="Maso">"Tiene dificultad"</option>
+        </select>
+
+        <label for="escribe">¿Escribe?</label>
+        <select id="escribe" escribe="escribe" required>
+          <option value="">Seleccione una opcion</option>
+          <option value="si">"Si"</option>
+          <option value="no">"No"</option>
+          <option value="Maso">"Tiene dificultad"</option>
+          </select>  
+
+        <label for="clase">¿Presta atencion en clase?</label>
+          <select id="clase" clase="clase" required>
+            <option value="">Seleccione una opcion</option>
+            <option value="si">"Si"</option>
+            <option value="no">"No"</option>
+            <option value="dificultad">"Tiene dificultad"</option>
+            </select>
+
+            <label for="jornada">¿Permanece toda la jornada dentro de clase?</label>
+            <select id="jornada" jornada="jornada" required>
+              <option value="">Seleccione una opcion</option>
+              <option value="si">"Si"</option>
+              <option value="no">"No"</option>
+              <option value="dificultad">"Tiene dificultad"</option>
+              </select>
+            
+            <label for="actividad">¿Realiza actividades extraescolares?</label>
+              <select id="actividad" actividad="actividad" required>
+                <option value="">Seleccione una opcion</option>
+                <option value="si">"Si"</option>
+                <option value="no">"No"</option>
+                </select>
+             <label for="juego">¿Le gusta jugar?</label>
+                <select id="juego" actividad="juego" required>
+                  <option value="">Seleccione una opcion</option>
+                  <option value="si">"Si"</option>
+                  <option value="no">"No"</option>
+                  </select>
+            <label for="jugar">¿A que le gusta jugar?</label>
+            <textarea id="jugar" name="jugar" rows="2" required></textarea>
+            <label for="vida">¿Como es un dia de su vida diaria?</label>
+            <textarea id="vida" name="vida" rows="2" required></textarea>
+
+
+        <h2>Antecedentes Clinicos</h2>
+      <label for="medicacion">¿Toma alguna medicación?</label>
+      <select id="medicacion" name="medicacion" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="antecedentes">¿Tiene antecedentes de algún familiar con discapacidad?</label>
+      <textarea id="antecedentes" name="antecedentes" rows="2" required></textarea>
+
+      <label for="cud">¿Actualmente posee CUD?</label>
+      <select id="cud" name="cud" required>
+        <option value="">Seleccione una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+        <option value="en_tramite">En trámite</option>
+      </select>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+</body>
+</html>
