@@ -23,6 +23,42 @@ header{
     z-index: 1000; /* Asegura que el header esté por encima */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
+
+/*estilo para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 10px;
+}
+
 /* Estilos para el div que envuelve el logo */
 .head .logo img { /* Apunta a la imagen dentro del div.logo que está dentro de div.head */
     height: 300px; /* Un tamaño más razonable para un logo de cabecera */
@@ -53,7 +89,7 @@ header{
 
 .content.home{ /* Estilo para la página de inicio */
     height: 100vh !important;
-    background: url("./../img/niñosss.png") no-repeat center;
+    background: url("./../img/fondotika.png") no-repeat center;
     background-size: cover;
     color: #fff; /* Texto blanco si la imagen es oscura */
     display: flex; /* Para centrar el contenido vertical y horizontalmente */

@@ -28,7 +28,23 @@ function updateWelcomeVisibility() {
         welcomeSignIn.style.display = ''; // Restablecer a default CSS
         welcomeSignUp.style.display = ''; // Restablecer a default CSS
     }
-}
+}// login modal 
+
+document.getElementById("openModal").onclick = function() {
+  document.getElementById("loginModal").style.display = "block";
+};
+
+document.querySelector(".close").onclick = function() {
+  document.getElementById("loginModal").style.display = "none";
+};
+
+window.onclick = function(event) {
+  const modal = document.getElementById("loginModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
 
 // Llama a la función al cargar y al redimensionar la ventana
 window.addEventListener('load', updateWelcomeVisibility);

@@ -6,5 +6,6 @@ from app import views
 
 urlpatterns = [
     path("",views.index, name="index"),
+    path("entrevista/",views.entrevista, name="entrevista"),
 ]
     
