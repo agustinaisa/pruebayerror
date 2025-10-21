@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIKA - Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="user-profile">
+            <img src="{% static 'img/user.png' %}" alt="Usuario">
+            <p>{{ user.username }}</p>
+        </div>
+        <ul class="menu">
+            <li><a href="{% url 'perfil' %}">Mi Perfil</a></li>
+            <li><a href="{% url 'pacientes' %}">Pacientes</a></li>
+            <li><a href="{% url 'turnos' %}">Turnos</a></li>
+            <li><a href="{% url 'asistencia' %}">Asistencia</a></li>
+            <li><a href="{% url 'informes' %}">Informes</a></li>
+            <li><a href="{% url 'observaciones' %}">Observaciones</a></li>
+            <li><a href="{% url 'comprobantes' %}">Comprobantes</a></li>
+            <li><a href="{% url 'testimonios' %}">Testimonios</a></li>
+            <li><a href="{% url 'configuracion' %}">Configuración</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Servicio</a></li>
+                    <li><a href="#">Test</a></li>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Testimonios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            {% block content %}
+            <div class="welcome">
+                <img src="{% static 'img/logo_tika.png' %}" alt="Tika">
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

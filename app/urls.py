@@ -1,13 +1,14 @@
 
 from django.urls import path, include
 from app import views
-
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
     path("",views.index, name="index"),
-    path("entrevista/",views.Entrevista_view, name="entrevista"),
-    path('gracias/', views.entrevista_completa_view, name='entrevista_completa'),
-    
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('', views.entrevista_view, name='entrevista'),
 ]
     
+

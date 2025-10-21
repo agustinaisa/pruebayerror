@@ -23,5 +23,3 @@ def registro_view(request):
             data["form"] = user_creation_form
     return render(request, 'registration/register.html', data)
 
-# views.py
-

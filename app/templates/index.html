@@ -16,6 +16,7 @@
 </head>
 <body>
   <header>
+
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
     <div class="head">
       <div class="logo">
@@ -42,23 +43,26 @@
         <h2 class="title"> ¡BIENVENIDOS A TIKA! </h2>
         <p>Tu espacio para aprender y crecer.</p>
         <div class="btn-home">
-          <h3><button id="openModal" class="btn">INGRESAR</button></h3>
-          <!-- Modal de inicio de sesión -->
+       <h3><button id="openModal" class="btn">INGRESAR</button></h3>
+
+<!-- 🟣 MODAL DE LOGIN -->
+ <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+
 <div id="loginModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>¡Bienvenido a Tika!</h2>
-    <form id="loginForm">
+    <h2>Iniciar sesión</h2>
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="username" placeholder="Ingresá tu email" required>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" placeholder="********" required>
 
-      <a href="#">¿Olvidaste tu contraseña?</a>
       <button type="submit">Ingresar</button>
+      <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
     </form>
-    <p id="errorMsg" class="error-msg"></p>
   </div>
 </div>
 
@@ -132,9 +136,32 @@
           Nuestros tests abarcan áreas como el desarrollo cognitivo, emocional, social y motor, permitiéndonos diseñar 
          un plan de intervención personalizado y efectivo.
 
-         <div class="btn-home">
-          <a href="{% url 'entrevista' %}" class="btn">¡Realizar Test!</a>
-         </div>
+         <!-- BOTÓN PARA ABRIR EL MODAL -->
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalEntrevista">
+  Realizar Entrevista
+</button>
+              <!-- MODAL DE LA ENTREVISTA -->
+<div class="modal fade" id="entrevistaModal" tabindex="-1" aria-labelledby="entrevistaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="background-color: #FFF3CD;">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="entrevistaModalLabel">Entrevista Integral - TIKA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="entrevistaForm" method="POST" action="{% url 'entrevista' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="text-end">
+            <button type="submit" class="btn btn-dark">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
         </p>
     
 
@@ -239,5 +266,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="DescriOculta.js"></script>
+    <script src="{% static 'js/modal.js' %}"></script>
 </body>
 </html>
