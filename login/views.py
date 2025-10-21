@@ -22,3 +22,6 @@ def registro_view(request):
         else:
             data["form"] = user_creation_form
     return render(request, 'registration/register.html', data)
+
+# views.py
+

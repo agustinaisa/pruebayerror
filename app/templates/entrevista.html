@@ -1,3 +1,8 @@
+{% load static %}
+<form method="post">
+    {% csrf_token %} 
+    {{ form.as_p }}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,8 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formulario de Entrevista - TIKA</title>
   <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static\css\StyleLogin.css">
+  <link rel="stylesheet" href="">
 <a href="index.html" class="btn-volver" style="display:inline-block;margin-bottom:40px;padding:30px 20px;background:#edd548;color:#000000;text-decoration:none;border-radius:10px;">Volver al inicio</a>
+  
   <style>
     body {
       font-family: 'Lexend', sans-serif;
@@ -256,8 +262,9 @@
       </select>
 
       <button type="submit">Enviar</button>
-    </form>
-  </div>
 
 </body>
 </html>
+<button type="submit">Enviar</button>
+    </form>
+  </div>
