@@ -120,6 +120,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+LOGIN_REDIRECT_URL = '/dashboard/'
+
 STATICFILES_DIRS = [
     Path(BASE_DIR) / "static",
     ]
