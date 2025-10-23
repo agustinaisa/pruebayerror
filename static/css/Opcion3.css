@@ -67,6 +67,13 @@ header{
 
 /* Estilos para la barra de navegación (Navbar) */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* altura del navbar */
+    background-color: #ffffff00;
+    z-index: 1000; /* para que esté encima de todo */
     display: flex; 
     /* margin-right: 10px; Este ya no es necesario si justify-content: space-between */
 }
