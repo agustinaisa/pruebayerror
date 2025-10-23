@@ -1,6 +1,10 @@
 const container = document.querySelector('.container');
 const btnSignIn = document.getElementById('btn-sign-in');
 const btnSignUp = document.getElementById('btn-sign-up');
+const modal = document.getElementById('modalTurnos');
+const btnTurnos = document.getElementById('btnTurnos'); // botón de Turnos
+const opcionesDashboard = document.getElementById('opcionesDashboard'); // contenedor con todas las opciones
+const spanClose = document.querySelector('.modal .close');
 
 btnSignUp.addEventListener('click', () => {
     container.classList.add('toggle');
@@ -45,6 +49,24 @@ window.onclick = function(event) {
   }
 };
 
+btnTurnos.onclick = function() {
+  modal.style.display = "block";
+  opcionesDashboard.style.display = "none"; // ocultar opciones
+}
+
+// Cerrar modal
+spanClose.onclick = function() {
+  modal.style.display = "none";
+  opcionesDashboard.style.display = "flex"; // mostrar opciones otra vez
+}
+
+// Cerrar modal si se hace click fuera del contenido
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    opcionesDashboard.style.display = "flex";
+  }
+}
 
 // Llama a la función al cargar y al redimensionar la ventana
 window.addEventListener('load', updateWelcomeVisibility);

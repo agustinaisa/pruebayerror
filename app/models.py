@@ -200,17 +200,28 @@ class ObrasSociales(models.Model):
 
 
 class Paciente(models.Model):
-    dni_paciente = models.IntegerField(db_column='DNI_paciente', primary_key=True)  # Field name made lowercase.
-    nombre = models.CharField(db_column='Nombre', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    apellido = models.CharField(db_column='Apellido', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    fecha_nacimiento = models.DateField(db_column='Fecha_Nacimiento', blank=True, null=True)  # Field name made lowercase.
-    sexo = models.CharField(db_column='Sexo', max_length=45, blank=True, null=True)  # Field name made lowercase.
-    telefono = models.IntegerField(db_column='Telefono', blank=True, null=True)  # Field name made lowercase.
-    email = models.CharField(db_column='Email', max_length=100, blank=True, null=True)  # Field name made lowercase.
+    dni_paciente = models.IntegerField(db_column='DNI_paciente', primary_key=True)
+    nombre = models.CharField(db_column='Nombre', max_length=45, blank=True, null=True)
+    apellido = models.CharField(db_column='Apellido', max_length=45, blank=True, null=True)
+    fecha_nacimiento = models.DateField(db_column='Fecha_Nacimiento', blank=True, null=True)
+    sexo = models.CharField(db_column='Sexo', max_length=45, blank=True, null=True)
+    telefono = models.IntegerField(db_column='Telefono', blank=True, null=True)
+    email = models.CharField(db_column='Email', max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'paciente'
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
+
+class EstadoPaciente(models.Model):
+    paciente = models.OneToOneField(Paciente, on_delete=models.CASCADE)
+    activo = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.paciente} - {'Activo' if self.activo else 'Dado de baja'}"
 
 
 class Pagos(models.Model):
@@ -235,3 +246,11 @@ class Turnos(models.Model):
     class Meta:
         managed = False
         db_table = 'turnos'
+
+class Entrevista(models.Model):
+    fecha = models.DateField()
+    observaciones = models.TextField(blank=True, null=True)
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'entrevista'
